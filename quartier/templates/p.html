@@ -1,0 +1,15 @@
+{%extends 'all-apps/base.html'%}
+{% load bootstrap3 %} {% load staticfiles %}
+{% block content %}
+{{block.super}}
+<div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+            <p>{{profile.first_name}}</p>
+            <p>{{profile.last_name}}</p>
+            <p>{{profile.neighborhood}}</p>
+            <a  href="{% url 'new-business'%}">add business</a>
+            
+        </div>
+        </div>
+        {% endblock %}
