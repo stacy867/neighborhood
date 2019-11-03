@@ -1,0 +1,23 @@
+{%extends 'all-apps/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="row">
+        <div class="thumbnail">
+            <p>{{user.username}} lives in
+                {{neighbors.name}}
+            </p>
+            
+            {% for b in business%}
+            <p>{{b.business_name}}</p>
+            <p>{{b.email_address}}</p>
+            {% endfor %}
+            
+        
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
