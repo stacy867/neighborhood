@@ -1,0 +1,16 @@
+{%extends 'all-apps/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    {% for n in neighbor %}
+    <div class="row">
+            
+        <h4 class="center-align"><i class="material-icons"></i><a href="{% url 'neighborhood' neighborhood_id=n.id %}">{{n.name}}</a></h4>
+    </div>
+    {% endfor %}
+</div>
+            
+    
+
+{% endblock %}
