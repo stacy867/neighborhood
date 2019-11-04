@@ -35,7 +35,8 @@ def new_business(request):
             b_post = form.save(commit=False)
             b_post.user = current_user
             b_post.save()
-            return redirect('profile')
+            return redirect('neighborhood')
+            
        
 
     else:

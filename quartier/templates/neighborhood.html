@@ -3,21 +3,34 @@
 {% block content %}
 {{block.super}}
 <div class="container">
+        <h1 style="text-align: center"> Welcome to {{neighbors.name}}  {{user.username}}
+            </h1>
     <div class="row">
-        <div class="thumbnail">
-            <p>{{user.username}} lives in
-                {{neighbors.name}}
-            </p>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
            
+           <h2>Available businesses:</h2>
             {% for b in business%}
             <p>{{b.business_name}}</p>
             <p>{{b.email_address}}</p>
             {% endfor %}
            
             
-        
-
+ </div>       
+</div>
         </div>
+        <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+               
+               <h2>Neighborhood Events:</h2>
+                
+               
+                
+     </div>       
+    </div>
+            </div>
     </div>
 
 </div>

@@ -3,11 +3,18 @@
 {% block content %}
 {{block.super}}
 <div class="container">
+        <h1 style="text-align: center">Click and sign to any neighborhood</h1>
     {% for n in neighbor %}
+  
     <div class="row">
-            
-        <h4 class="center-align"><i class="material-icons"></i><a href="{% url 'neighborhood' neighborhood_id=n.id %}">{{n.name}}</a></h4>
+        <div class="section" >
+            <div class="card-body">
+                <div class="thumbnail">
+                    <h4><a  style="text-align: center;color:black" href="{% url 'neighborhood' neighborhood_id=n.id %}">{{n.name}}</a></h4>
     </div>
+</div>
+</div>
+</div>
     {% endfor %}
 </div>
             
