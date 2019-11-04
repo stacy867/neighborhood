@@ -14,12 +14,13 @@ def welcome(request):
 
 @login_required(login_url='/accounts/login/')
 def neighborhood(request,neighborhood_id):
-    current_user=request.user
-    neighbors= NeighborHood.objects.get(id=neighborhood_id)
-    print(neighbors)
-    biz=BusinessClass.objects.filter(id=neighbors.id).all()
-    profile=Profile.objects.filter(id=current_user.id).first()
-    return render(request,'neighborhood.html',{'business':biz,'neighbors':neighbors,'neighborhood_id':neighborhood_id})    
+    if request.user.id == 1:
+        current_user=request.user
+        neighbors= NeighborHood.objects.get(id=neighborhood_id)
+        print(neighbors)
+        biz=BusinessClass.objects.filter(neighborhood=neighbors.id).all()
+        profile=Profile.objects.filter(id=current_user.id).first()
+        return render(request,'neighborhood.html',{'business':biz,'neighbors':neighbors,'neighborhood_id':neighborhood_id})    
 
     
 
@@ -65,7 +66,7 @@ def new_profile(request):
 @login_required(login_url='/accounts/login/')
 def myprofile(request):
      current_user= request.user
-     profile=Profile.objects.filter(user=current_user).first() 
+     profile=Profile.objects.filter(user=current_user).first()
      return render(request,'p.html',{"profile":profile})                
 
 
